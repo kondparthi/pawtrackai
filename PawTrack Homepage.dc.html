@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#F8F5EF; }
+  body { font-family:'Instrument Sans', Helvetica, Arial, sans-serif; color:#101B2E; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#0E2B21; text-decoration:none; }
+  a:hover { color:#2E6B4F; }
+  button { font-family:'Instrument Sans', Helvetica, Arial, sans-serif; }
+  @keyframes pawfloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+  @keyframes pulsering { 0% { transform:scale(.9); opacity:.7; } 100% { transform:scale(1.5); opacity:0; } }
+</style>
+</helmet>
+
+<div style="background:#F8F5EF;overflow-x:clip">
+
+<!-- ============ NAV ============ -->
+<nav style="position:sticky;top:0;z-index:60;background:rgba(248,245,239,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,43,33,.1)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:74px;display:flex;align-items:center;gap:40px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <span style="width:30px;height:30px;border-radius:9px;background:#0E2B21;display:flex;align-items:center;justify-content:center;color:#6FE0AE;font-family:Archivo,sans-serif;font-weight:800;font-size:14px">P</span>
+      <span style="font-family:Archivo,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#0E2B21">PawTrack<span style="color:#2E6B4F"> AI</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:30px;font-size:15px;font-weight:500;color:#3C4A43;margin-left:auto">
+      <a href="#how" style="color:#3C4A43">How It Works</a>
+      <a href="#who" style="color:#3C4A43">For Partners</a>
+      <a href="#pilot" style="color:#3C4A43">The Pilot</a>
+      <a href="#about" style="color:#3C4A43">About</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="#fund" style="display:inline-flex;align-items:center;gap:8px;background:#0E2B21;color:#F8F5EF;padding:12px 20px;border-radius:999px;font-weight:600;font-size:14.5px">Fund PawTrack →</a>
+      <button onClick="{{ togglePawly }}" title="Ask Pawwy" style="width:40px;height:40px;border-radius:999px;border:1px solid rgba(14,43,33,.18);background:#FFFFFF;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:#0E2B21">🐾</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ 01 HERO ============ -->
+<section id="top" data-screen-label="Hero" style="position:relative;padding:76px 0 110px">
+  <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 78% 8%, #EDF3EC 0%, #F8F5EF 55%, #F8F5EF 100%);pointer-events:none"></div>
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:56px;align-items:center">
+    <div style="min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F;margin-bottom:26px">Track. Report. Protect.</div>
+      <h1 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(44px,5.6vw,82px);line-height:.98;letter-spacing:-.035em;margin:0;color:#0E2B21;text-wrap:balance">Every Dog.<br />One Digital Identity.</h1>
+      <p style="font-size:19.5px;line-height:1.58;color:#46554D;margin:30px 0 0;max-width:33em;text-wrap:pretty">PawTrack AI recognises a community dog from a smartphone photo and connects it to a shared record of vaccination, sterilisation, health and location.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px">
+        <a href="#how" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px">Try the Demo →</a>
+        <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:transparent;color:#0E2B21;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px;border:1px solid rgba(14,43,33,.28)">Fund PawTrack →</a>
+      </div>
+      <div style="margin-top:46px;padding-top:22px;border-top:1px solid rgba(14,43,33,.14);display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#3C4A43">
+        <span>SMARTPHONE PHOTO</span><span style="color:#9AA8A0">→</span>
+        <span>AI-ASSISTED IDENTIFICATION</span><span style="color:#9AA8A0">→</span>
+        <span>MATCH</span><span style="color:#9AA8A0">→</span>
+        <span style="color:#2E6B4F">DIGITAL RECORD</span>
+      </div>
+      <div style="margin-top:16px;font-size:14.5px;color:#2E6B4F;font-weight:600">Pilot proposed for Greater Hyderabad.</div>
+    </div>
+
+    <div style="position:relative;min-width:0">
+      <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;background:#E6E2D8">
+        <image-slot id="pt-hero-bruno" shape="rect" placeholder="HERO PHOTO — Bruno, Indian community dog, documentary daylight, Hyderabad street, soft background (no landmark competing with his face)"></image-slot>
+      </div>
+      <div style="position:absolute;left:-46px;bottom:34px;width:min(330px,88%);background:#FFFFFF;border:1px solid rgba(14,43,33,.1);border-radius:8px;box-shadow:0 26px 60px -24px rgba(14,43,33,.4);overflow:hidden">
+        <div style="background:#0E2B21;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+          <div>
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:19px;color:#F8F5EF;letter-spacing:-.01em">BRUNO</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6FE0AE;letter-spacing:.08em;margin-top:3px">PT-000001</div>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#CBD9CE;border:1px solid rgba(203,217,206,.45);border-radius:6px;padding:5px 8px">DEMO RECORD</span>
+        </div>
+        <div style="padding:6px 18px 14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(14,43,33,.09)">
+            <span style="font-size:14.5px;color:#3C4A43">Vaccination</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2E6B4F">RECORDED</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(14,43,33,.09)">
+            <span style="font-size:14.5px;color:#3C4A43">Sterilisation</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2E6B4F">RECORDED</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(14,43,33,.09)">
+            <span style="font-size:14.5px;color:#3C4A43">Health</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62">3 ENTRIES</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:13px 0">
+            <span style="font-size:14.5px;color:#3C4A43">Location</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62">WARD LEVEL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDIBILITY STRIP ============ -->
+<div style="background:#FFFFFF;border-top:1px solid rgba(14,43,33,.12);border-bottom:1px solid rgba(14,43,33,.08)">
+  <div style="max-width:1180px;margin:0 auto;padding:22px 32px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 26px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#8A9189">A TECHNOLOGY INITIATIVE OF</span>
+    <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;color:#0E2B21">Priyadarshini Rural Development Society (PRDS)</span>
+    <span style="font-size:14.5px;color:#5C6B62">A registered organisation working since 2003.</span>
+  </div>
+</div>
+
+<!-- ============ 02 CHALLENGE ============ -->
+<section data-screen-label="The challenge" style="padding:120px 0 130px;background:#FFFFFF;border-top:1px solid rgba(14,43,33,.08)">
+  <div style="max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">The challenge</div>
+    <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21;max-width:22em">The problem isn't a lack of care.<br />It's a lack of connection.</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:86px;align-items:start">
+      <div style="min-width:0;padding-top:0">
+        <div style="aspect-ratio:1/1;border-radius:3px;overflow:hidden;background:#EFECE4"><image-slot id="pt-p-citizen" shape="rect" placeholder="Portrait — resident, Hyderabad street, documentary"></image-slot></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#2E6B4F;margin-top:20px">CITIZEN</div>
+        <p style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;line-height:1.35;color:#101B2E;margin:10px 0 0">“I know this dog by sight.”</p>
+      </div>
+      <div style="min-width:0;padding-top:64px">
+        <div style="aspect-ratio:1/1;border-radius:3px;overflow:hidden;background:#EFECE4"><image-slot id="pt-p-ngo" shape="rect" placeholder="Portrait — NGO field worker, no logos"></image-slot></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#2E6B4F;margin-top:20px">NGO</div>
+        <p style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;line-height:1.35;color:#101B2E;margin:10px 0 0">“The care history is somewhere else.”</p>
+      </div>
+      <div style="min-width:0;padding-top:24px">
+        <div style="aspect-ratio:1/1;border-radius:3px;overflow:hidden;background:#EFECE4"><image-slot id="pt-p-vet" shape="rect" placeholder="Portrait — veterinarian, plain scrubs, no branding"></image-slot></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#2E6B4F;margin-top:20px">VET</div>
+        <p style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;line-height:1.35;color:#101B2E;margin:10px 0 0">“The medical record is separate.”</p>
+      </div>
+      <div style="min-width:0;padding-top:96px">
+        <div style="aspect-ratio:1/1;border-radius:3px;overflow:hidden;background:#EFECE4"><image-slot id="pt-p-muni" shape="rect" placeholder="Portrait — city programme officer at desk, plain clothing, no uniform or logo"></image-slot></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.18em;color:#2E6B4F;margin-top:20px">MUNICIPALITY</div>
+        <p style="font-family:Archivo,sans-serif;font-weight:600;font-size:19px;line-height:1.35;color:#101B2E;margin:10px 0 0">“I can't see the complete picture.”</p>
+      </div>
+    </div>
+
+    <div style="margin-top:110px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end;border-top:1px solid rgba(14,43,33,.12);padding-top:40px">
+      <p style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);line-height:1.22;letter-spacing:-.02em;color:#0E2B21;margin:0">Different people.<br />Different records.<br />No shared picture.</p>
+      <p style="font-size:18px;line-height:1.6;color:#46554D;margin:0;max-width:26em">“So no one has the complete picture, ward by ward.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 TRANSFORMATION ============ -->
+<section data-screen-label="Transformation" style="padding:130px 0 140px;background:#F1EFE7">
+  <div style="max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">The transformation</div>
+    <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,62px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21;max-width:20em">The dog doesn't change.<br />What we know about her does.</h2>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px;margin-top:80px;background:rgba(14,43,33,.14)">
+      <div style="background:#F1EFE7;padding:0 34px 34px 0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#8A9189;padding:0 0 18px">TODAY</div>
+        <div style="position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#E4E0D6">
+          <image-slot id="pt-t-today" shape="rect" placeholder="SAME DOG — female community dog with ear notch, lying on a street corner, daylight (use the identical photo/dog as the right panel)"></image-slot>
+          <div style="position:absolute;top:14px;left:14px;background:rgba(248,245,239,.96);border-left:2px solid #B4BBB4;padding:9px 12px;pointer-events:none">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A9189">FIELD OBSERVATION</div>
+            <div style="font-size:13.5px;color:#101B2E;margin-top:3px">Seen daily, one lane</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A6B2E;margin-top:2px">not recorded</div>
+          </div>
+          <div style="position:absolute;top:44%;right:14px;background:rgba(248,245,239,.96);border-left:2px solid #B4BBB4;padding:9px 12px;pointer-events:none">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A9189">EAR NOTCH</div>
+            <div style="font-size:13.5px;color:#101B2E;margin-top:3px">Sterilised</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A6B2E;margin-top:2px">date unknown</div>
+          </div>
+          <div style="position:absolute;bottom:16px;left:14px;background:rgba(248,245,239,.96);border-left:2px solid #B4BBB4;padding:9px 12px;pointer-events:none">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A9189">VACCINATION NOTE</div>
+            <div style="font-size:13.5px;color:#101B2E;margin-top:3px">Held by one NGO</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A6B2E;margin-top:2px">not shared</div>
+          </div>
+        </div>
+        <p style="font-size:17.5px;line-height:1.6;color:#46554D;margin:26px 0 0;max-width:26em">“An ear notch can tell us the dog was sterilised. It can't tell us the whole history.”</p>
+      </div>
+      <div style="background:#F1EFE7;padding:0 0 34px 34px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#2E6B4F;padding:0 0 18px">WITH PAWTRACK</div>
+        <div style="position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#E4E0D6">
+          <image-slot id="pt-t-pawtrack" shape="rect" placeholder="SAME DOG, SAME PHOTO — identical dog, colour, environment and mood as the left panel"></image-slot>
+          <div style="position:absolute;top:14px;left:14px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#0B1F18;background:#6FE0AE;padding:6px 9px;pointer-events:none">ONE CONNECTED RECORD · PT-000001</div>
+          <div style="position:absolute;inset:auto 14px 14px 14px;background:rgba(14,43,33,.94);padding:14px 16px;display:flex;align-items:stretch;gap:14px;pointer-events:none">
+            <div style="width:2px;background:#6FE0AE;flex-shrink:0"></div>
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;flex:1">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#6FE0AE">IDENTITY</div>
+                <div style="font-size:13.5px;color:#F8F5EF;margin-top:4px">One record</div>
+              </div>
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#6FE0AE">HISTORY</div>
+                <div style="font-size:13.5px;color:#F8F5EF;margin-top:4px">Vaccination · sterilisation · health</div>
+              </div>
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#6FE0AE">LOCATION</div>
+                <div style="font-size:13.5px;color:#F8F5EF;margin-top:4px">Ward level</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:17.5px;line-height:1.6;color:#46554D;margin:26px 0 0;max-width:26em">The dog is the same. The information is no longer scattered across four places.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 PRODUCT ============ -->
+<section id="how" data-screen-label="How it works" style="padding:130px 0 140px;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 32px">
+    <div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:30px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">How it works</div>
+        <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,62px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21">Give every dog a history.</h2>
+      </div>
+      <p style="font-size:17.5px;line-height:1.6;color:#46554D;margin:0;max-width:24em">“No tags, chips or scanners. A smartphone photo becomes the starting point for a digital record.”</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;margin-top:76px;align-items:start">
+      <!-- FULL RECORD -->
+      <div style="border:1px solid rgba(14,43,33,.14);border-radius:8px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 70px -44px rgba(14,43,33,.35)">
+        <div style="background:#0E2B21;padding:13px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#CBD9CE">PAWTRACK</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#4E7A63">/</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#CBD9CE">RECORDS</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#4E7A63">/</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#6FE0AE">PT-000001</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#CBD9CE;border:1px solid rgba(203,217,206,.45);border-radius:4px;padding:5px 8px;margin-left:auto">DEMO RECORD</span>
+        </div>
+        <div style="padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid rgba(14,43,33,.1)">
+          <div style="width:58px;height:58px;border-radius:4px;overflow:hidden;background:#EFECE4;flex-shrink:0"><image-slot id="pt-rec-avatar" shape="rect" placeholder=""></image-slot></div>
+          <div style="min-width:0">
+            <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:#0E2B21;letter-spacing:-.02em">BRUNO</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;letter-spacing:.06em;margin-top:4px">PT-000001 · WARD LEVEL · MALE, ADULT</div>
+          </div>
+          <div style="margin-left:auto;text-align:right">
+            <span style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#1F5B41;border:1px solid rgba(46,107,79,.4);border-radius:4px;padding:5px 8px">RECORD VERIFIED</span>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;margin-top:8px">LAST VERIFIED · 25 JUN</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:26px;padding:0 26px;border-bottom:1px solid rgba(14,43,33,.1);overflow:hidden">
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;color:#0E2B21;padding:14px 0;border-bottom:2px solid #0E2B21">OVERVIEW</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;color:#9AA8A0;padding:14px 0">HEALTH</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;color:#9AA8A0;padding:14px 0">SIGHTINGS</span>
+          <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;color:#9AA8A0;padding:14px 0">DOCUMENTS</span>
+        </div>
+        <div style="padding:30px 26px 10px">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:30px">
+            <div style="border-radius:4px;overflow:hidden;aspect-ratio:1/1;background:#EFECE4"><image-slot id="pt-rec-photo" shape="rect" placeholder="Bruno — full body, street, documentary"></image-slot></div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#8A9189;margin-bottom:16px">TIMELINE</div>
+              <div style="display:flex;gap:14px;padding-bottom:20px">
+                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0"><span style="width:9px;height:9px;border-radius:99px;background:#2E6B4F;margin-top:6px"></span><span style="width:1px;flex:1;background:rgba(14,43,33,.16)"></span></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A9189">12 Jun</div><div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:3px">Vaccination recorded</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#2E6B4F;margin-top:4px">NGO ENTRY · VERIFIED</div></div>
+              </div>
+              <div style="display:flex;gap:14px;padding-bottom:20px">
+                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0"><span style="width:9px;height:9px;border-radius:99px;background:#2E6B4F;margin-top:6px"></span><span style="width:1px;flex:1;background:rgba(14,43,33,.16)"></span></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A9189">18 Jun</div><div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:3px">Sterilisation recorded</div><div style="font-size:14px;color:#5C6B62;margin-top:2px">Ear notch confirmed</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#2E6B4F;margin-top:4px">VET ENTRY · VERIFIED</div></div>
+              </div>
+              <div style="display:flex;gap:14px">
+                <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0"><span style="width:9px;height:9px;border-radius:99px;background:#2E6B4F;margin-top:6px"></span></div>
+                <div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A9189">25 Jun</div><div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:3px">Health check</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#2E6B4F;margin-top:4px">VET ENTRY · VERIFIED</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:30px;border-top:1px solid rgba(14,43,33,.1);padding:22px 0">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#8A9189">WARD</div>
+              <div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:6px">Ward-level only</div>
+              <div style="font-size:13.5px;color:#5C6B62;margin-top:2px">Exact location restricted to authorised users</div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#8A9189">RECORDED BY</div>
+              <div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:6px">NGO / Vet</div>
+              <div style="font-size:13.5px;color:#5C6B62;margin-top:2px">Field entries, reviewed on the record</div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#8A9189">AI IDENTIFICATION</div>
+              <div style="font-size:15.5px;font-weight:500;color:#101B2E;margin-top:6px">AI-assisted, confirmed by a person</div>
+              <div style="font-size:13.5px;color:#5C6B62;margin-top:2px">Field accuracy is a proposed pilot metric</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid rgba(14,43,33,.1);padding:18px 0 22px">
+            <button style="background:#0E2B21;color:#F8F5EF;border:none;border-radius:6px;padding:12px 18px;font-weight:600;font-size:14px;cursor:pointer">Add health entry</button>
+            <button style="background:transparent;color:#0E2B21;border:1px solid rgba(14,43,33,.24);border-radius:6px;padding:12px 18px;font-weight:600;font-size:14px;cursor:pointer">Log sighting</button>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A9189;margin-left:auto">DEMO · NO LIVE DATA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORKFLOW + PHONE -->
+      <div>
+        <div style="border-radius:34px;border:8px solid #0E2B21;background:#0E2B21;overflow:hidden;box-shadow:0 30px 70px -40px rgba(14,43,33,.5)">
+          <div style="background:#132F25;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#CBD9CE"><span>9:41</span><span>PAWTRACK · DEMO</span></div>
+          <div style="position:relative;aspect-ratio:3/4;background:#0B1F18">
+            <image-slot id="pt-app-camera" shape="rect" placeholder="Camera view — community dog seen through a phone viewfinder"></image-slot>
+            <div style="position:absolute;inset:0;pointer-events:none">
+              <div style="position:absolute;left:14%;top:22%;width:58%;height:40%;border:2px solid #6FE0AE;border-radius:10px"></div>
+              <div style="position:absolute;left:14%;top:calc(22% - 26px);font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6FE0AE;letter-spacing:.1em">AI IDENTIFICATION · RUNNING</div>
+            </div>
+          </div>
+          <div style="padding:18px;background:#0E2B21">
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#16352A;border-radius:12px;padding:14px 16px">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#6FE0AE">MATCH FOUND</div>
+                <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#F8F5EF;margin-top:4px">BRUNO · PT-000001</div>
+              </div>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#CBD9CE;border:1px solid rgba(203,217,206,.4);border-radius:6px;padding:5px 8px">DEMO</span>
+            </div>
+            <button style="width:100%;margin-top:12px;background:#6FE0AE;color:#0B1F18;border:none;border-radius:12px;padding:14px;font-weight:600;font-size:15px;cursor:pointer">Open record</button>
+          </div>
+        </div>
+
+        <div style="margin-top:34px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(14,43,33,.14)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A9189;width:22px">01</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em;color:#0E2B21;width:106px">CAPTURE</span><span style="font-size:15px;color:#5C6B62">One photo, from any phone.</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(14,43,33,.14)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A9189;width:22px">02</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em;color:#0E2B21;width:106px">IDENTIFY</span><span style="font-size:15px;color:#5C6B62">AI-assisted identification against known dogs nearby.</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(14,43,33,.14)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A9189;width:22px">03</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em;color:#0E2B21;width:106px">RECORD</span><span style="font-size:15px;color:#5C6B62">Add vaccination, sterilisation, health.</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px;padding:16px 0;border-top:1px solid rgba(14,43,33,.14);border-bottom:1px solid rgba(14,43,33,.14)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A9189;width:22px">04</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em;color:#0E2B21;width:106px">VERIFY</span><span style="font-size:15px;color:#5C6B62">NGO or vet confirms the entry.</span></div>
+        </div>
+
+        <a href="#how" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px;margin-top:32px">Try the Demo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 UNKNOWN DOG ============ -->
+<section data-screen-label="Unknown dogs" ref="{{ unknownRef }}" style="background:#0B1F18;position:relative;height:300vh">
+  <div style="position:sticky;top:0;min-height:100vh;display:flex;align-items:center;padding:40px 0">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:48px;align-items:center">
+      <div style="min-width:0">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#6FE0AE">Unknown dogs</div>
+        <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(32px,4.2vw,56px);line-height:1.04;letter-spacing:-.03em;margin:20px 0 0;color:#F8F5EF">An unknown dog is a lead,<br />not a dead end.</h2>
+        <p style="font-size:17px;line-height:1.6;color:#A9BDB1;margin:26px 0 0;max-width:24em">“The record gets stronger every time the dog is seen, treated or reported.”</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:0">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+            <div style="display:flex;align-items:baseline;gap:16px;padding:11px 0;border-top:1px solid rgba(203,217,206,.16);opacity:{{ s.op }}">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:{{ s.num }};width:20px;flex-shrink:0">{{ s.n }}</span>
+              <span style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;color:{{ s.color }}">{{ s.label }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:{{ s.num }};margin-left:auto">{{ s.state }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="min-width:0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:22px;align-items:start">
+        <div style="border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:#14332A;position:relative">
+          <image-slot id="pt-unknown-dog" shape="rect" placeholder="A DIFFERENT, UNNAMED dog — light-coated community dog, narrow lane, evening light (must not be Bruno)"></image-slot>
+          <div style="position:absolute;left:12px;top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0B1F18;background:#6FE0AE;border-radius:3px;padding:5px 8px;pointer-events:none">{{ badge }}</div>
+        </div>
+        <div style="border:1px solid rgba(111,224,174,.22);border-radius:6px;background:#0E2B21;overflow:hidden">
+          <div style="padding:18px;border-bottom:1px solid rgba(111,224,174,.18);display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <div>
+              <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:18px;color:#F8F5EF;letter-spacing:-.01em">{{ recordName }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6FE0AE;letter-spacing:.08em;margin-top:3px">{{ recordId }}</div>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#CBD9CE;border:1px solid rgba(203,217,206,.35);border-radius:6px;padding:5px 7px">DEMO</span>
+          </div>
+          <div style="padding:6px 18px 16px">
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(203,217,206,.12);opacity:{{ r.op }}">
+                <span style="font-size:14px;color:#CBD9CE">{{ r.k }}</span>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:{{ r.c }}">{{ r.v }}</span>
+              </div>
+            </sc-for>
+            <div style="margin-top:16px;height:3px;border-radius:99px;background:rgba(203,217,206,.14);overflow:hidden">
+              <div style="height:100%;background:#6FE0AE;width:{{ pct }}"></div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#7C9488;margin-top:10px">RECORD STRENGTH · {{ pct }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ECOSYSTEM ============ -->
+<section id="who" data-screen-label="For partners" style="padding:130px 0 140px;background:#F8F5EF">
+  <div style="max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">For partners</div>
+    <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21">One record.<br />Four ways to use it.</h2>
+
+    <div style="display:flex;flex-wrap:wrap;gap:34px;margin-top:64px;border-bottom:1px solid rgba(14,43,33,.14)">
+      <button onClick="{{ pickCitizens }}" style="background:none;border:none;border-bottom:2px solid {{ b1 }};padding:0 0 14px;cursor:pointer;font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;color:{{ c1 }}">CITIZENS</button>
+      <button onClick="{{ pickNgos }}" style="background:none;border:none;border-bottom:2px solid {{ b2 }};padding:0 0 14px;cursor:pointer;font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;color:{{ c2 }}">NGOs</button>
+      <button onClick="{{ pickVets }}" style="background:none;border:none;border-bottom:2px solid {{ b3 }};padding:0 0 14px;cursor:pointer;font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;color:{{ c3 }}">VETS</button>
+      <button onClick="{{ pickMunis }}" style="background:none;border:none;border-bottom:2px solid {{ b4 }};padding:0 0 14px;cursor:pointer;font-family:Archivo,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;color:{{ c4 }}">MUNICIPALITIES</button>
+    </div>
+
+    <sc-if value="{{ isCitizens }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:60px 0 0">
+        <div>
+          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><image-slot id="pt-e-citizen" shape="rect" placeholder="Resident"></image-slot></div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.16;letter-spacing:-.02em;color:#0E2B21;margin:24px 0 0">Check a dog's status.<br />Report an issue.<br />Access help.</h3>
+          <p style="font-size:17px;line-height:1.6;color:#46554D;margin:20px 0 0;max-width:24em">The dog you already know by sight becomes a record anyone can look up in seconds.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F"><span>CHECK</span><span style="color:#9AA8A0">→</span><span>REPORT</span><span style="color:#9AA8A0">→</span><span>HELP</span></div>
+          <div style="display:flex;flex-direction:column;gap:0;margin-top:18px">
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:56px;flex-shrink:0">CHECK</span><span style="font-size:15px;color:#46554D">Look up whether a dog is vaccinated and sterilised.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:56px;flex-shrink:0">REPORT</span><span style="font-size:15px;color:#46554D">Flag an injured, sick or unrecorded dog with one photo.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12);border-bottom:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:56px;flex-shrink:0">HELP</span><span style="font-size:15px;color:#46554D">Reach the NGO or vet already working that ward.</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:28px">
+            <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15.5px">Get Launch Updates</a>
+            <a href="#how" style="font-size:15.5px;font-weight:600;color:#0E2B21">See how it works →</a>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div style="width:min(320px,100%);border-radius:30px;border:8px solid #0E2B21;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px -40px rgba(14,43,33,.45)">
+            <div style="background:#0E2B21;padding:12px 16px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#CBD9CE"><span>9:41</span><span>DEMO</span></div>
+            <div style="padding:16px">
+              <div style="display:flex;align-items:center;gap:12px;background:#F1EFE7;border-radius:12px;padding:12px">
+                <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;background:#E4E0D6"><image-slot id="pt-e-c-thumb" shape="rect" placeholder=""></image-slot></div>
+                <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:#0E2B21">BRUNO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E6B4F">PT-000001</div></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 2px;border-bottom:1px solid rgba(14,43,33,.09)"><span style="font-size:13.5px;color:#3C4A43">Vaccination</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E6B4F">RECORDED</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 2px;border-bottom:1px solid rgba(14,43,33,.09)"><span style="font-size:13.5px;color:#3C4A43">Sterilisation</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E6B4F">RECORDED</span></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 2px"><span style="font-size:13.5px;color:#3C4A43">Ward</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5C6B62">WARD LEVEL</span></div>
+              <button style="width:100%;margin-top:10px;background:#0E2B21;color:#F8F5EF;border:none;border-radius:11px;padding:13px;font-weight:600;font-size:14px;cursor:pointer">Report an issue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isNgos }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:60px 0 0">
+        <div>
+          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><image-slot id="pt-e-ngo" shape="rect" placeholder="NGO"></image-slot></div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.16;letter-spacing:-.02em;color:#0E2B21;margin:24px 0 0">Manage dogs, drives,<br />rescues and records.</h3>
+          <p style="font-size:17px;line-height:1.6;color:#46554D;margin:20px 0 0;max-width:24em">Field teams work from one list instead of notebooks, photos and WhatsApp threads.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F"><span>REGISTER</span><span style="color:#9AA8A0">→</span><span>TREAT</span><span style="color:#9AA8A0">→</span><span>VERIFY</span><span style="color:#9AA8A0">→</span><span>COORDINATE</span></div>
+          <div style="display:flex;flex-direction:column;gap:0;margin-top:18px">
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">REGISTER</span><span style="font-size:15px;color:#46554D">Add a dog from a photo, or pick up an existing record.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">TREAT</span><span style="font-size:15px;color:#46554D">Log vaccination, sterilisation and treatment in the field.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">VERIFY</span><span style="font-size:15px;color:#46554D">Confirm provisional records raised by residents.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12);border-bottom:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">COORDINATE</span><span style="font-size:15px;color:#46554D">Plan drives ward by ward without duplicating work.</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:28px">
+            <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15.5px">Join the Network</a>
+            <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">Where PawTrack stands →</a>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(14,43,33,.13);border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 70px -44px rgba(14,43,33,.4)">
+          <div style="background:#0E2B21;padding:14px 18px;display:flex;justify-content:space-between;align-items:center"><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:#F8F5EF;letter-spacing:.04em">DRIVE QUEUE</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6FE0AE">DEMO DATA</span></div>
+          <div style="padding:8px 18px 18px">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(14,43,33,.09);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A9189"><span>DOG</span><span>TASK</span><span>STATUS</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 0;border-bottom:1px solid rgba(14,43,33,.07);font-size:14px;color:#101B2E"><span>PT-000001</span><span>Health check</span><span style="color:#2E6B4F">Scheduled</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 0;border-bottom:1px solid rgba(14,43,33,.07);font-size:14px;color:#101B2E"><span>PT-000014</span><span>Sterilisation</span><span style="color:#8A6B2E">Pending vet</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 0;border-bottom:1px solid rgba(14,43,33,.07);font-size:14px;color:#101B2E"><span>Provisional</span><span>Verify sighting</span><span style="color:#5C6B62">Unassigned</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:14px 0;font-size:14px;color:#101B2E"><span>PT-000022</span><span>Vaccination</span><span style="color:#2E6B4F">Recorded</span></div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isVets }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:60px 0 0">
+        <div>
+          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><image-slot id="pt-e-vet" shape="rect" placeholder="Vet"></image-slot></div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.16;letter-spacing:-.02em;color:#0E2B21;margin:24px 0 0">Record procedures and<br />health checks in the field.</h3>
+          <p style="font-size:17px;line-height:1.6;color:#46554D;margin:20px 0 0;max-width:24em">An entry takes seconds, attaches to the right dog, and stays readable to whoever sees the dog next.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F"><span>ASSESS</span><span style="color:#9AA8A0">→</span><span>RECORD</span><span style="color:#9AA8A0">→</span><span>VERIFY</span></div>
+          <div style="display:flex;flex-direction:column;gap:0;margin-top:18px">
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:62px;flex-shrink:0">ASSESS</span><span style="font-size:15px;color:#46554D">See the dog's history before the examination starts.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:62px;flex-shrink:0">RECORD</span><span style="font-size:15px;color:#46554D">Enter the procedure against the right dog, not a notebook.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12);border-bottom:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:62px;flex-shrink:0">VERIFY</span><span style="font-size:15px;color:#46554D">Sign off entries so the record carries clinical weight.</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:28px">
+            <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15.5px">Join the Network</a>
+            <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">Data &amp; transparency →</a>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center">
+          <div style="width:min(320px,100%);border-radius:30px;border:8px solid #0E2B21;background:#FFFFFF;overflow:hidden;box-shadow:0 30px 70px -40px rgba(14,43,33,.45)">
+            <div style="background:#0E2B21;padding:12px 16px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#CBD9CE"><span>NEW ENTRY</span><span>DEMO</span></div>
+            <div style="padding:16px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A9189">DOG</div>
+              <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:16px;color:#0E2B21;margin-top:5px">BRUNO · PT-000001</div>
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="border:1px solid rgba(14,43,33,.14);border-radius:11px;padding:12px;font-size:14px;color:#101B2E;display:flex;justify-content:space-between"><span>Procedure</span><span style="color:#2E6B4F">Vaccination</span></div>
+                <div style="border:1px solid rgba(14,43,33,.14);border-radius:11px;padding:12px;font-size:14px;color:#101B2E;display:flex;justify-content:space-between"><span>Batch</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#5C6B62">—</span></div>
+                <div style="border:1px solid rgba(14,43,33,.14);border-radius:11px;padding:12px;font-size:14px;color:#101B2E;display:flex;justify-content:space-between"><span>Notes</span><span style="color:#8A9189">Add</span></div>
+              </div>
+              <button style="width:100%;margin-top:14px;background:#6FE0AE;color:#0B1F18;border:none;border-radius:11px;padding:13px;font-weight:600;font-size:14px;cursor:pointer">Save to record</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isMunis }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:60px 0 0">
+        <div>
+          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><image-slot id="pt-e-muni" shape="rect" placeholder="City"></image-slot></div>
+          <h3 style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.16;letter-spacing:-.02em;color:#0E2B21;margin:24px 0 0">See ward-level coverage,<br />reports and complaints.</h3>
+          <p style="font-size:17px;line-height:1.6;color:#46554D;margin:20px 0 0;max-width:24em">The complete picture, ward by ward, from the same record the field already uses.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F"><span>MONITOR</span><span style="color:#9AA8A0">→</span><span>COORDINATE</span><span style="color:#9AA8A0">→</span><span>MEASURE</span><span style="color:#9AA8A0">→</span><span>REPORT</span></div>
+          <div style="display:flex;flex-direction:column;gap:0;margin-top:18px">
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">MONITOR</span><span style="font-size:15px;color:#46554D">Coverage, open reports and activity by ward.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">COORDINATE</span><span style="font-size:15px;color:#46554D">Direct NGO and vet capacity where it is thinnest.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">MEASURE</span><span style="font-size:15px;color:#46554D">Track programme progress against agreed metrics.</span></div>
+            <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(14,43,33,.12);border-bottom:1px solid rgba(14,43,33,.12)"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A9189;width:86px;flex-shrink:0">REPORT</span><span style="font-size:15px;color:#46554D">Produce auditable records for review and audit.</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:28px">
+            <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#0E2B21;color:#F8F5EF;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15.5px">Request a Demo</a>
+            <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">Where PawTrack stands →</a>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(14,43,33,.13);border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 30px 70px -44px rgba(14,43,33,.4)">
+          <div style="background:#0E2B21;padding:14px 18px;display:flex;justify-content:space-between;align-items:center"><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:14px;color:#F8F5EF;letter-spacing:.04em">WARD DASHBOARD</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6FE0AE">ILLUSTRATIVE</span></div>
+          <div style="padding:18px">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div><div style="display:flex;justify-content:space-between;font-size:13.5px;color:#3C4A43"><span>Ward A — coverage</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62">illustrative</span></div><div style="height:8px;border-radius:99px;background:#EFECE4;margin-top:7px"><div style="height:100%;width:62%;border-radius:99px;background:#2E6B4F"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:13.5px;color:#3C4A43"><span>Ward B — coverage</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62">illustrative</span></div><div style="height:8px;border-radius:99px;background:#EFECE4;margin-top:7px"><div style="height:100%;width:38%;border-radius:99px;background:#2E6B4F"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:13.5px;color:#3C4A43"><span>Ward C — coverage</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62">illustrative</span></div><div style="height:8px;border-radius:99px;background:#EFECE4;margin-top:7px"><div style="height:100%;width:21%;border-radius:99px;background:#2E6B4F"></div></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:22px;border-top:1px solid rgba(14,43,33,.1);padding-top:18px">
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A9189">DOGS RECORDED</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;color:#0E2B21;margin-top:5px">—</div></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A9189">OPEN REPORTS</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;color:#0E2B21;margin-top:5px">—</div></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A9189">RESPONSE TIME</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:22px;color:#0E2B21;margin-top:5px">—</div></div>
+            </div>
+            <div style="font-size:13px;color:#8A9189;margin-top:14px">Figures populate during the proposed pilot.</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<!-- ============ 07 ONE HEALTH ============ -->
+<section data-screen-label="One Health" style="background:#0B1F18;color:#F8F5EF;padding:0 0 130px">
+  <div style="position:relative;height:min(78vh,620px);overflow:hidden">
+    <image-slot id="pt-onehealth" shape="rect" placeholder="DOCUMENTARY — veterinarian treating a community dog in an Indian neighbourhood, residents nearby, natural light"></image-slot>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(11,31,24,.96) 0%, rgba(11,31,24,.3) 55%, rgba(11,31,24,.1) 100%);pointer-events:none"></div>
+    <div style="position:absolute;inset:auto 0 0 0;pointer-events:none">
+      <div style="max-width:1180px;margin:0 auto;padding:0 32px 52px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#6FE0AE">One health</div>
+        <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,62px);line-height:1.02;letter-spacing:-.03em;margin:20px 0 0;max-width:20em">When animal welfare becomes<br />community wellbeing.</h2>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;margin:0 auto;padding:70px 32px 0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:start">
+    <div>
+      <p style="font-size:19px;line-height:1.6;color:#C4D3C9;margin:0;max-width:28em">A shared record is not only about dogs. It is the intended path from care in one lane to coordination across a city.</p>
+      <div style="margin-top:44px;display:flex;flex-direction:column;gap:0">
+        <div style="padding:20px 0;border-top:1px solid rgba(203,217,206,.18);display:flex;align-items:baseline;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6FE0AE;width:22px">01</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em">Healthier dogs</span></div>
+        <div style="padding:20px 0;border-top:1px solid rgba(203,217,206,.18);display:flex;align-items:baseline;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6FE0AE;width:22px">02</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em">Safer neighbourhoods</span></div>
+        <div style="padding:20px 0;border-top:1px solid rgba(203,217,206,.18);display:flex;align-items:baseline;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6FE0AE;width:22px">03</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em">Stronger public health</span></div>
+        <div style="padding:20px 0;border-top:1px solid rgba(203,217,206,.18);border-bottom:1px solid rgba(203,217,206,.18);display:flex;align-items:baseline;gap:18px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6FE0AE;width:22px">04</span><span style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,28px);letter-spacing:-.02em">More accountable programmes</span></div>
+      </div>
+      <p style="font-size:15px;line-height:1.6;color:#8FA79A;margin:22px 0 0;max-width:30em">These are intended, measurable outcomes of the proposed pilot, not results achieved to date.</p>
+      <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#6FE0AE;color:#0B1F18;padding:16px 26px;border-radius:999px;font-weight:600;font-size:16px;margin-top:36px">Partner with PawTrack →</a>
+    </div>
+
+    <div style="border-top:2px solid rgba(111,224,174,.5);padding:26px 0 0">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#C4D3C9">HOW WE MEASURE SUCCESS</div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#6FE0AE;border:1px solid rgba(111,224,174,.4);border-radius:6px;padding:5px 8px">PROPOSED</span>
+      </div>
+      <p style="font-size:15px;line-height:1.6;color:#8FA79A;margin:14px 0 0">Proposed pilot metrics. None of these are results to date.</p>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px">
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Dogs recorded</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">AI identification performance</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Coverage by ward</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Verified vaccination records</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Verified sterilisation records</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Response time</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Active users</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Field verification rate</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);border-bottom:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Record completeness</div>
+        <div style="padding:12px 0;border-top:1px solid rgba(203,217,206,.14);border-bottom:1px solid rgba(203,217,206,.14);font-size:15.5px;color:#F8F5EF">Citizen reports</div>
+      </div>
+      <p style="font-size:14.5px;line-height:1.6;color:#8FA79A;margin:20px 0 0">Results will be published after the pilot review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 TRUST ============ -->
+<section id="about" data-screen-label="Where we stand" style="background:#FFFFFF;padding:120px 0 130px">
+  <div style="max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">Where we stand</div>
+    <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(32px,4vw,52px);line-height:1.04;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21">Where PawTrack stands.</h2>
+
+    <div id="pilot" style="margin-top:72px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:1px solid rgba(14,43,33,.16)">
+      <div style="padding:26px 18px 0 0;position:relative">
+        <div style="position:absolute;top:-1px;left:0;right:0;height:3px;background:#0E2B21"></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#2E6B4F">YOU ARE HERE</div>
+        <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21;margin-top:10px;letter-spacing:.02em">DESIGN &amp; BUILD</div>
+        <div style="font-size:14px;color:#46554D;margin-top:6px">In progress</div>
+      </div>
+      <div style="padding:26px 18px 0 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#B4BBB4">—</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#8A9189;margin-top:10px;letter-spacing:.02em">MOBILISE</div><div style="font-size:14px;color:#8A9189;margin-top:6px">Proposed</div></div>
+      <div style="padding:26px 18px 0 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#B4BBB4">—</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#8A9189;margin-top:10px;letter-spacing:.02em">PILOT</div><div style="font-size:14px;color:#8A9189;margin-top:6px">Proposed</div></div>
+      <div style="padding:26px 18px 0 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#B4BBB4">—</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#8A9189;margin-top:10px;letter-spacing:.02em">REVIEW</div><div style="font-size:14px;color:#8A9189;margin-top:6px">Proposed</div></div>
+      <div style="padding:26px 0 0 0"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#B4BBB4">—</div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#8A9189;margin-top:10px;letter-spacing:.02em">SCALE</div><div style="font-size:14px;color:#8A9189;margin-top:6px">Future phase</div></div>
+    </div>
+
+    <p style="font-size:15px;line-height:1.6;color:#8A9189;margin:26px 0 0;max-width:40em">Statuses are stated as they are today. Nothing beyond Design &amp; Build has started.</p>
+
+    <div style="margin-top:88px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;border-top:1px solid rgba(14,43,33,.12);padding-top:44px;align-items:start">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8A9189">BUILT BY</div>
+        <p style="font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,30px);line-height:1.2;letter-spacing:-.02em;color:#0E2B21;margin:16px 0 0">Priyadarshini Rural Development Society</p>
+      </div>
+      <div>
+        <p style="font-size:17.5px;line-height:1.62;color:#101B2E;margin:0;max-width:34em">PRDS is a grassroots organisation established in 2003, with more than two decades of experience working with communities in Andhra Pradesh and Telangana. PawTrack represents an expansion of that community-development work into animal welfare, public health and technology-led social innovation.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:26px">
+          <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">About PRDS →</a>
+          <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">Our Work →</a>
+          <a href="#fund" style="font-size:15.5px;font-weight:600;color:#0E2B21">Partner With Us →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:80px;border-top:1px solid rgba(14,43,33,.12);padding-top:44px">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8A9189">DATA &amp; TRANSPARENCY</div>
+        <a href="#fund" style="font-size:15.5px;font-weight:600;color:#0E2B21">Download Partner Brief →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 44px;margin-top:30px">
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">What is collected</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">Dog photos, vaccination, sterilisation and health entries, ward, and who made each entry.</p></div>
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">Who can access it</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">Residents see a dog's care status. NGOs, vets and the municipality see the operational record for their area.</p></div>
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">Why locations are restricted</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">Public views show ward level only, so precise locations cannot be used to target or remove dogs.</p></div>
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">How records are verified</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">Entries stay provisional until an NGO or vet confirms them. Every entry carries its author and date.</p></div>
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">How reports are handled</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">A citizen report becomes a task for the ward team, and its outcome is recorded against the dog.</p></div>
+        <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:17px;color:#0E2B21">How results are reported</div><p style="font-size:15.5px;line-height:1.6;color:#46554D;margin:8px 0 0">Pilot metrics are published after the review, including what did not work.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 FUNDING ============ -->
+<section id="fund" data-screen-label="The pilot fund" style="background:#F1EFE7;padding:120px 0 130px">
+  <div style="max-width:1180px;margin:0 auto;padding:0 32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#2E6B4F">The pilot fund</div>
+    <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,60px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 0;color:#0E2B21">Help build PawTrack.</h2>
+    <p style="font-size:18.5px;line-height:1.6;color:#46554D;margin:24px 0 0;max-width:34em">Help build the digital infrastructure for better community-dog management: the recognition model, the field app, the shared record and the review that follows.</p>
+    <div style="margin-top:40px;padding-top:20px;border-top:1px solid rgba(14,43,33,.14);display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;color:#3C4A43">
+      <span>WHY FUND</span><span style="color:#9AA8A0">→</span>
+      <span>WHAT THE PILOT DOES</span><span style="color:#9AA8A0">→</span>
+      <span>WHAT FUNDING SUPPORTS</span><span style="color:#9AA8A0">→</span>
+      <span>WHAT IS MEASURED</span><span style="color:#9AA8A0">→</span>
+      <span>HOW RESULTS ARE REPORTED</span><span style="color:#9AA8A0">→</span>
+      <span style="color:#2E6B4F">FUND PAWTRACK</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;margin-top:64px;align-items:start">
+      <div style="background:#FFFFFF;border:1px solid rgba(14,43,33,.13);border-radius:20px;padding:32px">
+        <sc-if value="{{ preLaunch }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A6B2E;border:1px solid rgba(138,107,46,.4);border-radius:4px;padding:5px 9px">PRE-LAUNCH</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#2E6B4F">THE PAWTRACK PILOT</span>
+            </div>
+            <p style="font-family:Archivo,sans-serif;font-weight:700;font-size:26px;line-height:1.2;letter-spacing:-.02em;color:#0E2B21;margin:16px 0 0">Preparing for the first pilot in Greater Hyderabad.</p>
+            <p style="font-size:16px;line-height:1.6;color:#46554D;margin:14px 0 0">Contributions are <strong style="font-weight:600">not open yet</strong>. The crowdfunding campaign has not launched. Leave an email and we will tell you the day it does.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px">
+              <input type="email" placeholder="you@email.com" style="flex:1;min-width:180px;border:1px solid rgba(14,43,33,.2);border-radius:999px;padding:15px 20px;font-size:15px;color:#101B2E;background:#F8F5EF" />
+              <button style="background:#0E2B21;color:#F8F5EF;border:none;border-radius:999px;padding:15px 24px;font-weight:600;font-size:15px;cursor:pointer">Get Campaign Updates</button>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ campaignLive }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#2E6B4F">CAMPAIGN LIVE</div>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#8A9189;border:1px solid rgba(14,43,33,.2);border-radius:6px;padding:5px 8px">ILLUSTRATIVE</span>
+            </div>
+            <p style="font-family:Archivo,sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;color:#0E2B21;margin:16px 0 0">₹X <span style="font-size:20px;font-weight:600;color:#5C6B62">raised of ₹Y</span></p>
+            <div style="height:10px;border-radius:99px;background:#EFECE4;margin-top:16px"><div style="height:100%;width:44%;border-radius:99px;background:#2E6B4F"></div></div>
+            <div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62"><span>XX%</span><span>X supporters</span><span>Updated X minutes ago</span></div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ preLaunch }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:30px;border:1px solid rgba(14,43,33,.14);border-radius:14px;padding:22px;background:#F8F5EF">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#2E6B4F">HELP US REACH OUR GOAL</div>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#8A6B2E;border:1px solid rgba(138,107,46,.4);border-radius:4px;padding:5px 9px">CAMPAIGN PREVIEW</span>
+            </div>
+            <p style="font-family:Archivo,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.02em;color:#0E2B21;margin:16px 0 0">₹— <span style="font-size:19px;font-weight:600;color:#5C6B62">raised of ₹—</span></p>
+            <div style="height:10px;border-radius:99px;background:#E7E3D9;margin-top:14px"><div style="height:100%;width:0%;border-radius:99px;background:#2E6B4F"></div></div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62"><span>—% funded</span><span>— supporters</span><span>— days remaining</span></div>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:20px">
+              <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(14,43,33,.12);color:#5C6B62;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px">Fund PawTrack →</span>
+              <span style="font-size:13.5px;color:#8A9189">Opens when the campaign launches.</span>
+            </div>
+          </div>
+          <div style="margin-top:28px;border-top:1px solid rgba(14,43,33,.1);padding-top:24px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8A9189">PLANNED AT LAUNCH</div>
+            <p style="font-size:15.5px;line-height:1.62;color:#46554D;margin:14px 0 0">Contribution tiers of ₹250, ₹500, ₹1,000 and ₹2,500 plus a custom amount, one-time or monthly, through UPI, cards and net banking. None of this is accepting payments today.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ campaignLive }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:34px;border-top:1px solid rgba(14,43,33,.1);padding-top:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8A9189">CONTRIBUTION</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+            <sc-for list="{{ amounts }}" as="a" hint-placeholder-count="5">
+              <button onClick="{{ a.pick }}" style="border-radius:999px;padding:13px 20px;font-size:15px;font-weight:600;cursor:pointer;border:1px solid {{ a.bd }};background:{{ a.bg }};color:{{ a.fg }}">{{ a.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:18px">
+            <button onClick="{{ pickOnce }}" style="border-radius:999px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid {{ f1bd }};background:{{ f1bg }};color:{{ f1fg }}">One-time</button>
+            <button onClick="{{ pickMonthly }}" style="border-radius:999px;padding:11px 18px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid {{ f2bd }};background:{{ f2bg }};color:{{ f2fg }}">Monthly</button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#5C6B62">
+            <span style="border:1px solid rgba(14,43,33,.18);border-radius:6px;padding:6px 10px">UPI</span>
+            <span style="border:1px solid rgba(14,43,33,.18);border-radius:6px;padding:6px 10px">CARDS</span>
+            <span style="border:1px solid rgba(14,43,33,.18);border-radius:6px;padding:6px 10px">NET BANKING</span>
+          </div>
+          <p style="font-size:13.5px;line-height:1.6;color:#5C6B62;margin:20px 0 0">Contributions are collected by PRDS for the PawTrack pilot. Allocation, receipts and the refund policy are published with the campaign.</p>
+        </div>
+        </sc-if>
+      </div>
+
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#8A9189">WHERE YOUR SUPPORT GOES</div>
+        <div style="margin-top:22px">
+          <div style="padding:22px 0;border-top:1px solid rgba(14,43,33,.14);display:flex;align-items:baseline;justify-content:space-between;gap:20px"><div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#0E2B21">Technology</div><div style="font-size:14.5px;color:#5C6B62;margin-top:4px">Recognition model, app, shared record</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;flex-shrink:0">allocation TBC</span></div>
+          <div style="padding:22px 0;border-top:1px solid rgba(14,43,33,.14);display:flex;align-items:baseline;justify-content:space-between;gap:20px"><div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#0E2B21">Field Deployment</div><div style="font-size:14.5px;color:#5C6B62;margin-top:4px">Ward teams, devices, vet coordination</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;flex-shrink:0">allocation TBC</span></div>
+          <div style="padding:22px 0;border-top:1px solid rgba(14,43,33,.14);display:flex;align-items:baseline;justify-content:space-between;gap:20px"><div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#0E2B21">Community Engagement</div><div style="font-size:14.5px;color:#5C6B62;margin-top:4px">Resident onboarding and training</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;flex-shrink:0">allocation TBC</span></div>
+          <div style="padding:22px 0;border-top:1px solid rgba(14,43,33,.14);border-bottom:1px solid rgba(14,43,33,.14);display:flex;align-items:baseline;justify-content:space-between;gap:20px"><div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:20px;color:#0E2B21">Impact Tracking</div><div style="font-size:14.5px;color:#5C6B62;margin-top:4px">Measurement and the published pilot review</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;flex-shrink:0">allocation TBC</span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.6;color:#8A9189;margin:18px 0 0">Percentages are confirmed with the pilot budget before the campaign opens.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:96px;border-top:1px solid rgba(14,43,33,.14);padding-top:44px">
+      <h3 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.06;letter-spacing:-.03em;color:#0E2B21;margin:0">Why fund PawTrack?</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 44px;margin-top:38px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">TECHNOLOGY</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Building the digital identification and shared-record infrastructure.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">FIELD IMPLEMENTATION</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Putting the system into actual community use.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">ANIMAL WELFARE</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Better visibility into vaccination, sterilisation and health records.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">PUBLIC HEALTH</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Supporting better coordination around community-dog management.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">ACCOUNTABILITY</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Creating measurable, auditable programme information.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F">SCALABILITY</div><p style="font-size:16px;line-height:1.6;color:#46554D;margin:10px 0 0">Building a model that can potentially expand beyond the initial pilot.</p></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:40px">
+        <a href="#pilot" style="font-size:15.5px;font-weight:600;color:#0E2B21">What the pilot does →</a>
+        <a href="#about" style="font-size:15.5px;font-weight:600;color:#0E2B21">How results are reported →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 FINAL CTA ============ -->
+<section data-screen-label="Final CTA" style="position:relative;background:#0B1F18;color:#F8F5EF">
+  <div style="position:relative;min-height:min(92vh,760px);display:flex;align-items:flex-end">
+    <div style="position:absolute;inset:0"><image-slot id="pt-final-bruno" shape="rect" placeholder="DUSK — Bruno on a Hyderabad street at evening, warm documentary light, people in the background"></image-slot></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(11,31,24,.96) 0%, rgba(11,31,24,.55) 45%, rgba(11,31,24,.15) 100%);pointer-events:none"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 32px 76px;width:100%">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-bottom:26px;border-bottom:1px solid rgba(203,217,206,.22);margin-bottom:34px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7C9488">
+        <span>ONE RECORD</span><span>·</span><span>FOUR PARTNERS</span><span>·</span><span>ONE PROPOSED PILOT</span><span style="color:#6FE0AE">·</span><span style="color:#6FE0AE">GREATER HYDERABAD</span>
+      </div>
+      <h2 style="font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(36px,5.4vw,76px);line-height:1;letter-spacing:-.035em;margin:0;max-width:20em">Every dog deserves to be seen.</h2>
+      <p style="font-family:Caveat,cursive;font-size:clamp(28px,3.2vw,42px);line-height:1.1;color:#6FE0AE;margin:26px 0 0">Same roads.<br />Brighter futures.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px">
+        <a href="#fund" style="display:inline-flex;align-items:center;gap:9px;background:#6FE0AE;color:#0B1F18;padding:17px 28px;border-radius:999px;font-weight:600;font-size:16.5px">Fund PawTrack →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:56px;border-top:1px solid rgba(203,217,206,.22);padding-top:26px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#7C9488">NGO / VET</div><a href="#who" style="color:#F8F5EF;font-size:16.5px;font-weight:600;display:inline-block;margin-top:8px">Join the Network →</a></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#7C9488">CITY</div><a href="#who" style="color:#F8F5EF;font-size:16.5px;font-weight:600;display:inline-block;margin-top:8px">Request a Demo →</a></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#7C9488">COMPANY</div><a href="#fund" style="color:#F8F5EF;font-size:16.5px;font-weight:600;display:inline-block;margin-top:8px">Partner With PawTrack →</a></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#7C9488">HYDERABAD RESIDENT</div><a href="#fund" style="color:#F8F5EF;font-size:16.5px;font-weight:600;display:inline-block;margin-top:8px">Get Launch Updates →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:#08170F;padding:34px 0 30px">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;align-items:start">
+      <div>
+        <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:#F8F5EF">PawTrack AI</div>
+        <div style="font-size:14px;color:#7C9488;margin-top:5px">A PRDS Initiative</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline">
+        <a href="#fund" style="font-size:14px;color:#A9BDB1">Fund PawTrack</a>
+        <a href="#who" style="font-size:14px;color:#A9BDB1">Request a Demo</a>
+        <a href="#who" style="font-size:14px;color:#A9BDB1">Join the Network</a>
+        <a href="#fund" style="font-size:14px;color:#A9BDB1">Get Launch Updates</a>
+        <a href="#about" style="font-size:14px;color:#A9BDB1">Privacy</a>
+        <a href="#about" style="font-size:14px;color:#A9BDB1">Data Policy</a>
+        <a href="#fund" style="font-size:14px;color:#A9BDB1">Funding / Refund</a>
+        <a href="#fund" style="font-size:14px;color:#A9BDB1">Contact</a>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5E7368;margin-left:auto">© 2026</span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ============ PAWLY ============ -->
+<sc-if value="{{ showPawly }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;right:24px;bottom:24px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px;max-width:calc(100vw - 48px)">
+    <sc-if value="{{ pawlyOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(372px,calc(100vw - 48px));background:#FFFFFF;border:1px solid rgba(14,43,33,.14);border-radius:18px;box-shadow:0 30px 70px -28px rgba(14,43,33,.5);overflow:hidden;display:flex;flex-direction:column;max-height:min(76vh,620px)">
+        <div style="background:#0E2B21;padding:15px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0">
+          <span style="width:32px;height:32px;border-radius:999px;background:#16352A;display:flex;align-items:center;justify-content:center;font-size:15px">🐾</span>
+          <div style="min-width:0">
+            <div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15.5px;color:#F8F5EF;letter-spacing:-.01em">Pawwy</div>
+            <div style="font-size:12.5px;color:#A9BDB1;margin-top:1px">Your PawTrack AI guide.</div>
+          </div>
+          <button onClick="{{ togglePawly }}" title="Close" style="margin-left:auto;background:none;border:none;color:#A9BDB1;font-size:18px;line-height:1;cursor:pointer;padding:4px">✕</button>
+        </div>
+
+        <div ref="{{ chatRef }}" style="padding:16px 18px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:12px">
+          <sc-for list="{{ chat }}" as="m" hint-placeholder-count="1">
+            <div style="display:flex;flex-direction:column;align-items:{{ m.align }};gap:6px">
+              <div style="max-width:90%;background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }};border-radius:12px;padding:11px 13px;font-size:14.5px;line-height:1.55;white-space:pre-line">{{ m.text }}</div>
+              <div style="display:{{ m.tagDisplay }};font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#8A6B2E;border:1px solid rgba(138,107,46,.4);border-radius:4px;padding:4px 7px">{{ m.tag }}</div>
+              <a href="{{ m.href }}" onClick="{{ m.go }}" style="display:{{ m.ctaDisplay }};align-items:center;gap:8px;background:#0E2B21;color:#F8F5EF;padding:10px 16px;border-radius:999px;font-weight:600;font-size:13.5px">{{ m.cta }}</a>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="border-top:1px solid rgba(14,43,33,.12);padding:14px 18px;flex-shrink:0;background:#F8F5EF">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#8A9189">SUGGESTED</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;max-height:104px;overflow-y:auto">
+            <sc-for list="{{ suggestions }}" as="q" hint-placeholder-count="8">
+              <button onClick="{{ q.ask }}" style="border:1px solid rgba(14,43,33,.18);background:#FFFFFF;border-radius:999px;padding:8px 13px;font-size:13px;color:#0E2B21;cursor:pointer">{{ q.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <input value="{{ draft }}" onChange="{{ onDraft }}" onKeyDown="{{ onKey }}" placeholder="Ask Pawwy a question" style="flex:1;min-width:0;border:1px solid rgba(14,43,33,.2);border-radius:999px;padding:11px 15px;font-size:14px;color:#101B2E;background:#FFFFFF;font-family:'Instrument Sans',sans-serif" />
+            <button onClick="{{ send }}" style="background:#0E2B21;color:#6FE0AE;border:none;border-radius:999px;width:42px;height:42px;font-size:16px;cursor:pointer;flex-shrink:0">→</button>
+          </div>
+          <div style="font-size:11.5px;line-height:1.5;color:#8A9189;margin-top:10px">Pawwy answers only from published PawTrack information. It does not report results the pilot has not produced.</div>
+        </div>
+      </div>
+    </sc-if>
+    <button onClick="{{ togglePawly }}" title="Ask Pawwy" style="display:flex;align-items:center;gap:10px;border-radius:999px;border:none;background:#0E2B21;color:#F8F5EF;padding:13px 20px 13px 15px;font-weight:600;font-size:14.5px;cursor:pointer;box-shadow:0 18px 40px -16px rgba(14,43,33,.6)">
+      <span style="font-size:17px;animation:pawfloat 4s ease-in-out infinite">🐾</span>
+      <span>Ask Pawwy</span>
+    </button>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;campaignLive&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Funding&quot;},&quot;showPawly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;unknownAutoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = {
+    tab: 'citizens', stage: 0, pawly: false, amount: 500, freq: 'once',
+    draft: '',
+    chat: [{ who: 'bot', text: "Hi! I'm Pawwy 🐾\n\nYour AI guide to PawTrack. Ask me anything about community dogs, the pilot, how PawTrack works or how you can help." }]
+  };
+
+  kb = [
+    { k: ['what is pawtrack', 'what is paw track', 'what is this', 'about pawtrack', 'tell me about'], tag: 'IN DEVELOPMENT',
+      a: "PawTrack AI gives every community dog one digital identity.\n\nA smartphone photo is matched to a shared record of vaccination, sterilisation, health and ward-level location, so residents, NGOs, vets and the municipality all work from the same information.\n\nIt is currently in development. Nothing is deployed in the field yet.",
+      cta: 'How It Works →', href: '#how' },
+    { k: ['how does it work', 'how it works', 'how does pawtrack work', 'workflow'],
+      a: "Four steps:\n\n01 CAPTURE — one photo, from any phone.\n02 IDENTIFY — AI-assisted identification against known dogs nearby.\n03 RECORD — add vaccination, sterilisation or health.\n04 VERIFY — an NGO or vet confirms the entry.\n\nNo tags, chips or scanners.",
+      cta: 'How It Works →', href: '#how' },
+    { k: ['how does the ai identify', 'how does the ai work', 'ai identify', 'identification', 'accuracy', 'recognition', 'face recognition'], tag: 'IN DEVELOPMENT',
+      a: "The model compares a new photo against dogs already recorded nearby and proposes a match. A person confirms it before the record changes.\n\nIf there is no match, the photo becomes a provisional record rather than a dead end.\n\nWe do not publish an accuracy figure. Field accuracy is a proposed pilot metric and has not been measured yet.",
+      cta: 'How It Works →', href: '#how' },
+    { k: ['what problem', 'problem are you solving', 'why does this exist', 'the problem'],
+      a: "The problem isn't a lack of care, it's a lack of connection.\n\nA resident knows a dog by sight. An NGO holds the care history. A vet holds the medical record. The municipality can't see the whole picture. Four sets of information about the same dog, never joined up.",
+      cta: 'See the transformation →', href: '#top' },
+    { k: ['how can i help', 'how do i help', 'get involved', 'volunteer', 'support you'],
+      a: "Depends who you are:\n\n• Resident — get launch updates and use the app during the pilot.\n• NGO or vet — join the network.\n• Municipality — request a demo.\n• Company or foundation — fund the pilot.\n\nTell me which one you are and I'll point you there.",
+      cta: 'For Partners →', href: '#who' },
+    { k: ['fund', 'funding programme', 'funding program', 'donate', 'csr', 'contribute', 'invest', 'sponsor'], tag: 'PRE-LAUNCH',
+      a: "The funding programme covers technology, field implementation, animal welfare, public health, accountability and scalability.\n\nContributions are not open yet — the campaign has not launched, no amount has been raised and there are no supporters to report. You can leave an email and we'll tell you the day it opens.",
+      cta: 'Fund PawTrack →', href: '#fund' },
+    { k: ['municipality', 'municipal', 'city', 'ghmc', 'government', 'ward officer'], tag: 'PROPOSED',
+      a: "For a municipality, PawTrack is programme visibility: coverage by ward, open reports, response time and auditable records, drawn from the same entries NGOs and vets make in the field.\n\nWe have no confirmed municipal or government partnerships. The Greater Hyderabad pilot is proposed, not agreed.",
+      cta: 'Request a Demo →', href: '#who' },
+    { k: ['ngo', 'rescue', 'shelter', 'non profit', 'nonprofit', 'animal welfare organisation'],
+      a: "For an NGO: register a dog from a photo, log treatment in the field, verify provisional records raised by residents, and coordinate drives ward by ward without duplicating work.",
+      cta: 'Join the Network →', href: '#who' },
+    { k: ['vet', 'veterinarian', 'veterinary', 'doctor', 'clinic'],
+      a: "For a vet: see the dog's history before the examination, record the procedure against the right dog, and sign it off so the entry carries clinical weight.",
+      cta: 'Join the Network →', href: '#who' },
+    { k: ['is pawtrack live', 'is it live', 'already live', 'launched', 'available', 'download the app', 'status'], tag: 'IN DEVELOPMENT',
+      a: "Not yet.\n\nDESIGN & BUILD — in progress (current stage)\nMOBILISE — proposed\nPILOT — proposed\nREVIEW — proposed\nSCALE — future phase\n\nThere is no app to download, no dogs recorded and no pilot results. Everything shown on this site is a demo.",
+      cta: 'Where PawTrack stands →', href: '#about' },
+    { k: ['who is pawtrack for', 'who is it for', 'audience', 'users'],
+      a: "Four groups share one record: citizens, NGOs, vets and municipalities. Each sees the part of it they need.",
+      cta: 'For Partners →', href: '#who' },
+    { k: ['who built', 'who is behind', 'prds', 'organisation', 'organization', 'team'],
+      a: "PawTrack is built by Priyadarshini Rural Development Society (PRDS), a grassroots organisation established in 2003, working with communities in Andhra Pradesh and Telangana for more than two decades.",
+      cta: 'About PRDS →', href: '#about' },
+    { k: ['measure', 'metrics', 'impact', 'results', 'success', 'report'], tag: 'PROPOSED',
+      a: "Proposed pilot metrics: dogs recorded, AI identification performance, coverage by ward, verified vaccination and sterilisation records, response time, active users, field verification rate, record completeness and citizen reports.\n\nNone of these are results to date. Results will be published after the pilot review.",
+      cta: 'How we measure success →', href: '#pilot' },
+    { k: ['data', 'privacy', 'location', 'safe', 'security', 'transparency'],
+      a: "Public views show ward-level information only, so precise locations cannot be used to target or remove dogs. Entries stay provisional until an NGO or vet confirms them, and every entry carries its author and date.",
+      cta: 'Data & transparency →', href: '#about' },
+    { k: ['unknown dog', 'no match', 'not in the system', 'new dog'],
+      a: "An unknown dog is a lead, not a dead end. The photo creates a provisional record, the ward team reviews it, and when the dog is recognised again a permanent PawTrack ID is issued.",
+      cta: 'How It Works →', href: '#how' },
+    { k: ['cost', 'price', 'how much', 'pricing'],
+      a: "Pricing has not been set. The pilot is funded through PRDS and contributions rather than user fees, and any longer-term model would be decided after the pilot review.",
+      cta: 'Fund PawTrack →', href: '#fund' },
+    { k: ['hyderabad', 'where', 'location of pilot', 'which city'], tag: 'PROPOSED',
+      a: "The first pilot is proposed for Greater Hyderabad. It has not started and no wards have been confirmed.",
+      cta: 'Where PawTrack stands →', href: '#about' }
+  ];
+
+  answer(q) {
+    const t = (q || '').toLowerCase();
+    let best = null, score = 0;
+    this.kb.forEach(e => {
+      e.k.forEach(k => {
+        if (t.indexOf(k) !== -1 && k.length > score) { score = k.length; best = e; }
+      });
+    });
+    if (best) return best;
+    return {
+      a: "I only answer from what PawTrack has actually published, and I don't have that one.\n\nTry asking what PawTrack is, how the AI identifies a dog, what the pilot will measure, or how to fund it.",
+      cta: 'For Partners →', href: '#who'
+    };
+  }
+
+  ask(q) {
+    const r = this.answer(q);
+    this.setState(s => ({
+      draft: '',
+      chat: s.chat.concat([{ who: 'me', text: q }, { who: 'bot', text: r.a, tag: r.tag, cta: r.cta, href: r.href }])
+    }));
+  }
+  unknownRef = React.createRef();
+  chatRef = React.createRef();
+
+  componentDidUpdate(pp, ps) {
+    if (ps.chat !== this.state.chat && this.chatRef.current) {
+      this.chatRef.current.scrollTop = this.chatRef.current.scrollHeight;
+    }
+  }
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = this.unknownRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const span = r.height - window.innerHeight;
+      const p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
+      const stage = Math.min(5, Math.floor(p * 6.2));
+      if (stage !== this.state.stage) this.setState({ stage });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+    if (this.props.unknownAutoplay) {
+      this.timer = setInterval(() => this.setState(s => ({ stage: (s.stage + 1) % 8 })), 1400);
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    if (this.timer) clearInterval(this.timer);
+  }
+
+  renderVals() {
+    const st = this.state.stage;
+    const labels = ['PHOTO', 'NO MATCH', 'PROVISIONAL RECORD', 'FIELD REVIEW', 'MATCH', 'PAWTRACK ID'];
+    const states = ['captured', 'not in records', 'created', 'ward team', 'recognised again', 'issued'];
+    const steps = labels.map((label, i) => ({
+      label,
+      n: '0' + (i + 1),
+      state: i < st ? 'done' : i === st ? states[i] : '',
+      op: i === st ? 1 : i < st ? 0.6 : 0.24,
+      num: i === st ? '#6FE0AE' : '#7C9488',
+      color: i === st ? '#F8F5EF' : '#A9BDB1'
+    }));
+
+    const row = (k, v, from, c) => ({ k, v: st >= from ? v : 'awaiting', c: st >= from ? (c || '#6FE0AE') : '#5E7368', op: st >= from ? 1 : 0.32 });
+    const rows = [
+      row('Field observation', 'photo logged', 0),
+      row('AI identification', st >= 4 ? 'match found' : 'no match', 1, st >= 4 ? '#6FE0AE' : '#D8C48A'),
+      row('Record', st >= 5 ? 'verified' : 'provisional', 2, st >= 5 ? '#6FE0AE' : '#D8C48A'),
+      row('Field review', 'completed by ward team', 3),
+      row('PawTrack ID', 'PT-000042', 5)
+    ];
+
+    const tab = this.state.tab;
+    const on = k => tab === k;
+    const tc = k => (on(k) ? '#0E2B21' : '#8A9189');
+    const tb = k => (on(k) ? '#0E2B21' : 'transparent');
+
+    const amt = this.state.amount;
+    const amounts = [250, 500, 1000, 2500, 0].map(v => ({
+      label: v === 0 ? 'Custom' : '₹' + v.toLocaleString('en-IN'),
+      bg: amt === v ? '#0E2B21' : '#FFFFFF',
+      fg: amt === v ? '#F8F5EF' : '#0E2B21',
+      bd: amt === v ? '#0E2B21' : 'rgba(14,43,33,.2)',
+      pick: () => this.setState({ amount: v })
+    }));
+    const f = this.state.freq;
+    const live = !!this.props.campaignLive;
+
+    return {
+      unknownRef: this.unknownRef,
+      chatRef: this.chatRef,
+      steps, rows,
+      badge: labels[st],
+      recordName: st >= 5 ? 'WARD DOG · UNNAMED' : 'UNKNOWN DOG',
+      recordId: st >= 5 ? 'PT-000042' : st >= 2 ? 'PROV-0117' : '—',
+      pct: Math.round(((st + 1) / 6) * 100) + '%',
+      isCitizens: on('citizens'), isNgos: on('ngos'), isVets: on('vets'), isMunis: on('munis'),
+      pickCitizens: () => this.setState({ tab: 'citizens' }),
+      pickNgos: () => this.setState({ tab: 'ngos' }),
+      pickVets: () => this.setState({ tab: 'vets' }),
+      pickMunis: () => this.setState({ tab: 'munis' }),
+      c1: tc('citizens'), c2: tc('ngos'), c3: tc('vets'), c4: tc('munis'),
+      b1: tb('citizens'), b2: tb('ngos'), b3: tb('vets'), b4: tb('munis'),
+      amounts,
+      pickOnce: () => this.setState({ freq: 'once' }),
+      pickMonthly: () => this.setState({ freq: 'monthly' }),
+      f1bg: f === 'once' ? '#0E2B21' : '#FFFFFF', f1fg: f === 'once' ? '#F8F5EF' : '#0E2B21', f1bd: f === 'once' ? '#0E2B21' : 'rgba(14,43,33,.2)',
+      f2bg: f === 'monthly' ? '#0E2B21' : '#FFFFFF', f2fg: f === 'monthly' ? '#F8F5EF' : '#0E2B21', f2bd: f === 'monthly' ? '#0E2B21' : 'rgba(14,43,33,.2)',
+      campaignLive: live, preLaunch: !live,
+      showPawly: this.props.showPawly !== false,
+      pawlyOpen: this.state.pawly,
+      togglePawly: () => this.setState(s => ({ pawly: !s.pawly })),
+      draft: this.state.draft,
+      onDraft: e => this.setState({ draft: e.target.value }),
+      onKey: e => { if (e.key === 'Enter' && this.state.draft.trim()) this.ask(this.state.draft.trim()); },
+      send: () => { if (this.state.draft.trim()) this.ask(this.state.draft.trim()); },
+      suggestions: [
+        'What is PawTrack AI?', 'How does it work?', 'What problem are you solving?',
+        'How can I help?', 'Show me the funding programme', 'How does the AI identify a dog?',
+        'Who is PawTrack for?', 'Is PawTrack already live?'
+      ].map(label => ({ label, ask: () => this.ask(label) })),
+      chat: this.state.chat.map(m => ({
+        text: m.text,
+        align: m.who === 'me' ? 'flex-end' : 'flex-start',
+        bg: m.who === 'me' ? '#0E2B21' : '#F1EFE7',
+        fg: m.who === 'me' ? '#F8F5EF' : '#101B2E',
+        bd: m.who === 'me' ? '#0E2B21' : 'rgba(14,43,33,.12)',
+        tag: m.tag || '',
+        tagDisplay: m.tag ? 'inline-block' : 'none',
+        cta: m.cta || '',
+        href: m.href || '#top',
+        ctaDisplay: m.cta ? 'inline-flex' : 'none',
+        go: () => this.setState({ pawly: false })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
