@@ -157,7 +157,7 @@
       <div style="background:#F1EFE7;padding:0 34px 34px 0">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#8A9189;padding:0 0 18px">TODAY</div>
         <div style="position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#E4E0D6">
-          <image-slot id="pt-t-today" shape="rect" placeholder="SAME DOG — female community dog with ear notch, lying on a street corner, daylight (use the identical photo/dog as the right panel)"></image-slot>
+          <img src="img/today.png" alt="TODAY" style="width:100%;height:100%;object-fit:cover;object-position:center" />
           <div style="position:absolute;top:14px;left:14px;background:rgba(248,245,239,.96);border-left:2px solid #B4BBB4;padding:9px 12px;pointer-events:none">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#8A9189">FIELD OBSERVATION</div>
             <div style="font-size:13.5px;color:#101B2E;margin-top:3px">Seen daily, one lane</div>
@@ -179,7 +179,7 @@
       <div style="background:#F1EFE7;padding:0 0 34px 34px">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#2E6B4F;padding:0 0 18px">WITH PAWTRACK</div>
         <div style="position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#E4E0D6">
-          <image-slot id="pt-t-pawtrack" shape="rect" placeholder="SAME DOG, SAME PHOTO — identical dog, colour, environment and mood as the left panel"></image-slot>
+          <img src="img/withpawtrack.png" alt="WITH PAWTRACK" style="width:100%;height:100%;object-fit:cover;object-position:center" />
           <div style="position:absolute;top:14px;left:14px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#0B1F18;background:#6FE0AE;padding:6px 9px;pointer-events:none">ONE CONNECTED RECORD · PT-000001</div>
           <div style="position:absolute;inset:auto 14px 14px 14px;background:rgba(14,43,33,.94);padding:14px 16px;display:flex;align-items:stretch;gap:14px;pointer-events:none">
             <div style="width:2px;background:#6FE0AE;flex-shrink:0"></div>
@@ -228,7 +228,7 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#CBD9CE;border:1px solid rgba(203,217,206,.45);border-radius:4px;padding:5px 8px;margin-left:auto">DEMO RECORD</span>
         </div>
         <div style="padding:22px 26px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid rgba(14,43,33,.1)">
-          <div style="width:58px;height:58px;border-radius:4px;overflow:hidden;background:#EFECE4;flex-shrink:0"><image-slot id="pt-rec-avatar" shape="rect" placeholder=""></image-slot></div>
+          <div style="width:58px;height:58px;border-radius:4px;overflow:hidden;background:#EFECE4;flex-shrink:0"><img src="img/brunofullbody.png" alt="Avatar" style="width:100%;height:100%;object-fit:cover;object-position:center" /></div>
           <div style="min-width:0">
             <div style="font-family:Archivo,sans-serif;font-weight:800;font-size:26px;color:#0E2B21;letter-spacing:-.02em">BRUNO</div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5C6B62;letter-spacing:.06em;margin-top:4px">PT-000001 · WARD LEVEL · MALE, ADULT</div>
@@ -246,7 +246,7 @@
         </div>
         <div style="padding:30px 26px 10px">
           <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:30px">
-            <div style="border-radius:4px;overflow:hidden;aspect-ratio:1/1;background:#EFECE4"><image-slot id="pt-rec-photo" shape="rect" placeholder="Bruno — full body, street, documentary"></image-slot></div>
+            <div style="border-radius:4px;overflow:hidden;aspect-ratio:1/1;background:#EFECE4"><img src="img/brunofullbody.png" alt="Photo" style="width:100%;height:100%;object-fit:cover;object-position:center" /></div>
             <div>
               <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#8A9189;margin-bottom:16px">TIMELINE</div>
               <div style="display:flex;gap:14px;padding-bottom:20px">
@@ -345,7 +345,7 @@
 
       <div style="min-width:0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:22px;align-items:start">
         <div style="border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:#14332A;position:relative">
-          <image-slot id="pt-unknown-dog" shape="rect" placeholder="A DIFFERENT, UNNAMED dog — light-coated community dog, narrow lane, evening light (must not be Bruno)"></image-slot>
+         <img src="img/unknowndog.png" alt="Unknown dog" style="width:100%;height:100%;object-fit:cover;object-position:center" />
           <div style="position:absolute;left:12px;top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#0B1F18;background:#6FE0AE;border-radius:3px;padding:5px 8px;pointer-events:none">{{ badge }}</div>
         </div>
         <div style="border:1px solid rgba(111,224,174,.22);border-radius:6px;background:#0E2B21;overflow:hidden">
@@ -390,7 +390,7 @@
     <sc-if value="{{ isCitizens }}" hint-placeholder-val="{{ true }}">
       <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center;padding:60px 0 0">
         <div>
-          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><image-slot id="pt-e-citizen" shape="rect" placeholder="Resident"></image-slot></div>
+          <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;background:#EFECE4"><img src="img/unknowndog.png" alt="Bruno" style="width:100%;height:100%;object-fit:cover;object-position:center" /></div>
           <h3 style="font-family:Archivo,sans-serif;font-weight:700;font-size:30px;line-height:1.16;letter-spacing:-.02em;color:#0E2B21;margin:24px 0 0">Check a dog's status.<br />Report an issue.<br />Access help.</h3>
           <p style="font-size:17px;line-height:1.6;color:#46554D;margin:20px 0 0;max-width:24em">The dog you already know by sight becomes a record anyone can look up in seconds.</p>
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#2E6B4F"><span>CHECK</span><span style="color:#9AA8A0">→</span><span>REPORT</span><span style="color:#9AA8A0">→</span><span>HELP</span></div>
@@ -409,7 +409,7 @@
             <div style="background:#0E2B21;padding:12px 16px;display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#CBD9CE"><span>9:41</span><span>DEMO</span></div>
             <div style="padding:16px">
               <div style="display:flex;align-items:center;gap:12px;background:#F1EFE7;border-radius:12px;padding:12px">
-                <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;background:#E4E0D6"><image-slot id="pt-e-c-thumb" shape="rect" placeholder=""></image-slot></div>
+                <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;background:#E4E0D6"><img src="img/brunofullbody.png" alt="Bruno" style="width:100%;height:100%;object-fit:cover;object-position:center" /></div>
                 <div><div style="font-family:Archivo,sans-serif;font-weight:700;font-size:15px;color:#0E2B21">BRUNO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E6B4F">PT-000001</div></div>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 2px;border-bottom:1px solid rgba(14,43,33,.09)"><span style="font-size:13.5px;color:#3C4A43">Vaccination</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#2E6B4F">RECORDED</span></div>
@@ -530,7 +530,7 @@
 <!-- ============ 07 ONE HEALTH ============ -->
 <section data-screen-label="One Health" style="background:#0B1F18;color:#F8F5EF;padding:0 0 130px">
   <div style="position:relative;height:min(78vh,620px);overflow:hidden">
-    <image-slot id="pt-onehealth" shape="rect" placeholder="DOCUMENTARY — veterinarian treating a community dog in an Indian neighbourhood, residents nearby, natural light"></image-slot>
+    <img src="img/onehealth.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center" />
     <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(11,31,24,.96) 0%, rgba(11,31,24,.3) 55%, rgba(11,31,24,.1) 100%);pointer-events:none"></div>
     <div style="position:absolute;inset:auto 0 0 0;pointer-events:none">
       <div style="max-width:1180px;margin:0 auto;padding:0 32px 52px">
@@ -746,7 +746,7 @@
 <!-- ============ 10 FINAL CTA ============ -->
 <section data-screen-label="Final CTA" style="position:relative;background:#0B1F18;color:#F8F5EF">
   <div style="position:relative;min-height:min(92vh,760px);display:flex;align-items:flex-end">
-    <div style="position:absolute;inset:0"><image-slot id="pt-final-bruno" shape="rect" placeholder="DUSK — Bruno on a Hyderabad street at evening, warm documentary light, people in the background"></image-slot></div>
+    <div style="position:absolute;inset:0"><img src="img/everydog.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center" /></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(11,31,24,.96) 0%, rgba(11,31,24,.55) 45%, rgba(11,31,24,.15) 100%);pointer-events:none"></div>
     <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 32px 76px;width:100%">
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-bottom:26px;border-bottom:1px solid rgba(203,217,206,.22);margin-bottom:34px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#7C9488">
